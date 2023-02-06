@@ -1,14 +1,6 @@
 <?php
+    include "stockData.php";
     $user_name="毘沙門太郎";
-    $stock_data[] = array (
-        "stock_id" => 1, "stock_name" => "強力粉", "amount" => "25kg", "n" => 3, "remarks" => "食パン・バターロール・ピザ向き"
-    );
-    $stock_data[] = array (
-        "stock_id" => 2, "stock_name" => "薄力粉", "amount" => "25kg", "n" => 4, "remarks" => "メロンパンの外生地・クッキー・マフィン"
-    );
-    $stock_data[] = array (
-        "stock_id" => 3, "stock_name" => "ドライイースト", "amount" => "1kg", "n" => 7, "remarks" => "予備発酵なし"
-    );
 ?>
 
 <!doctype html>
@@ -55,30 +47,20 @@
                         <th>個数</th>
                         <th>備考</th>
                     </tr>
+                    <?php
+                        foreach( $stock_data as $val ) {
+                    ?>
                     <tr>
-                        <td class="num"><?= $stock_data[0]["stock_id"] ?></td>
-                        <td><?= $stock_data[0]["stock_name"] ?></td>
-                        <td class="num"><?= $stock_data[0]["amount"] ?></td>
+                        <td class="num"><?= $val["stock_id"] ?></td>
+                        <td><?= $val["stock_name"] ?></td>
+                        <td class="num"><?= $val["amount"] ?></td>
                         <td>パン生地の材料</td>
-                        <td class="num"><?= $stock_data[0]["n"] ?></td>
-                        <td><?= $stock_data[0]["remarks"] ?></td>
+                        <td class="num"><?= $val["n"] ?></td>
+                        <td><?= $val["remarks"] ?></td>
                     </tr>
-                    <tr>
-                        <td class="num"><?= $stock_data[1]["stock_id"] ?></td>
-                        <td><?= $stock_data[1]["stock_name"] ?></td>
-                        <td class="num"><?= $stock_data[1]["amount"] ?></td>
-                        <td>パン生地の材料</td>
-                        <td class="num"><?= $stock_data[1]["n"] ?></td>
-                        <td><?= $stock_data[1]["remarks"] ?></td>
-                    </tr>
-                    <tr>
-                        <td class="num"><?= $stock_data[2]["stock_id"] ?></td>
-                        <td><?= $stock_data[2]["stock_name"] ?></td>
-                        <td class="num"><?= $stock_data[2]["amount"] ?></td>
-                        <td>パン生地の材料</td>
-                        <td class="num"><?= $stock_data[2]["n"] ?></td>
-                        <td><?= $stock_data[2]["remarks"] ?></td>
-                    </tr>
+                    <?php
+                    }
+                    ?>
                 </table>
             </div>
             <div id="footer">Copyright © All Rights Reserved by JMOOC</div>
