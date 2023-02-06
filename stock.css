@@ -7,6 +7,10 @@ a:hover {
     color: #990099;
 }
 
+.center_elements {
+    text-align: center;
+}
+
 #container {
     width : 900px ;
     margin: 0 auto 0 auto;
@@ -64,4 +68,8 @@ a:hover {
 
 .num {
     text-align: right;
+}
+
+.right_elements {
+    text-align: center;
 }
