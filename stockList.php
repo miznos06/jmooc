@@ -111,6 +111,9 @@
                         }
                         ?>
                     </tr>
+                    <?php
+                    }
+                    ?>
                 </table>
                 <?php
                     if ($mode == 1) {
