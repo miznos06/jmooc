@@ -14,9 +14,9 @@
         <div id="nav">
             <ul>
             <?php
-                (A) {
+                for($i = 0;$i < count($areaList); $i++) {
             ?>
-                <li><a href=""><?=$areaList[$i]?></li>
+                <li><a href=""><?=$areaList[$i]?></a></li>
             <?php
                 }
             ?>

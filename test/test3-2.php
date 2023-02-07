@@ -15,7 +15,7 @@
             <?php
                 foreach($data as $val){
             ?>
-                <div class="one"><img src="images/(A)">(B)</div>
+                <div class="one"><img src="images/<?=$val["flag"]?>"><?=$val["name"]?></div>
             <?php
                 }
             ?>

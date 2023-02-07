@@ -1,5 +1,5 @@
 <?php
-    include "test3-data1.php";
+    include "test3-data6.php";
 ?>
 <!doctype html>
 
@@ -7,15 +7,16 @@
     <head>
         <title>問題</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="test3-1.css">
+        <link rel="stylesheet" type="text/css" href="test3-7.css">
     </head>
 <body>
     <div id="container">
         <div id="main">
             <?php
-                for($i = 0;$i<count($data);$i++){
+                foreach($data as $val){
+                    while($val["area"]==1);
             ?>
-                <div class="one"><img src="images/<?=$data[$i]["flag"]?>"><?=$data[$i]["name"]?></div>
+                <div class="one"><img src="images/<?=$val["flag"]?>"><?=$val["name"]?></div>
             <?php
                 }
             ?>

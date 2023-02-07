@@ -15,7 +15,7 @@
             <?php
                 for($i = 0;$i<count($data);$i++){
             ?>
-                <div class="one"><img src="images/(A)">(B)</div>
+                <div class="one"><img src="images/<?=$data[$i]["flag"]?>"><?=$data[$i]["name"]?></div>
             <?php
                 }
             ?>
