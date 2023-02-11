@@ -24,13 +24,17 @@ else {
         $type = $_SESSION["type"];
     }
 
-    $sql = "SELECT * FROM stockList";
-
     if($type >0){
-        $sql .= " WHERE type=$type";
+        $where = " WHERE type=$type";
     }
-
-    echo $sql ."<br>";
+    else {
+        $where = "";
+    }
+    $sql = "SELECT List.stock_id, List.stock_name, List.amount, List.type, ";
+    $sql .= " Log.sum_n, List.remarks FROM stockList as List LEFT JOIN ";
+    $sql .= " (SELECT stock_id, SUM(in_out_n) AS sum_n FROM stockLog ";
+    $sql .= "GROUP BY stock_id) as Log ON List.stock_id = Log.stock_id ";
+    $sql .= "$where ORDER BY List.stock_id ";
 
     if($result = mysqli_query($conn, $sql)){
     }
@@ -152,7 +156,7 @@ else {
                     <input type="submit" value="切り替え">
                 </form>
                 <form action="log.php" method="post">
-                <table width=100%>
+                <table width="100%">
                     <tr>
                         <th>番号</th>
                         <th>材料</th>
@@ -197,7 +201,7 @@ else {
                         <td><?= $val["stock_name"] ?></td>
                         <td class="num"><?= $val["amount"] ?></td>
                         <td><?= $type_s ?></td>
-                        <td class="num"></td>
+                        <td class="num"><?= $val["sum_n"] ?></td>
                         <?php
                             if ($mode == 0) {
                         ?>
