@@ -12,6 +12,10 @@ a:hover {
     text-align: center;
 }
 
+.err {
+    color: red;
+}
+
 th {
     text-align: right;
 }
