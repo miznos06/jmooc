@@ -8,7 +8,7 @@
     //SQLに接続
     $conn = mysqli_connect($DBSERVER, $DBUSER, $DBPASSWORD, $DBNAME);
 
-    //接続エラー時のメッセージとexit
+    //接続エラー時のメッセージと終了
     if(mysqli_connect_error())
     {
         echo mysqli_connect_error();
