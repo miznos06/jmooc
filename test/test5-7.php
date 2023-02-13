@@ -5,6 +5,7 @@ if(isset($_SESSION["test5-7"])){
     $data = $_SESSION["test5-7"];
 }
 
+//Aが配列として$dataに格納される
 $data[]="A";
 $_SESSION["test5-7"]=$data;
 
