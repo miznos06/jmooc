@@ -18,7 +18,7 @@ $_SESSION["test5-7"]=$data;
     </head>
     <body>
         <form action="test5-7sub.php">
-            <input type="submit" value="buttion">
+            <input type="submit" value="button">
         </form>
             <?php
             foreach($data as $value){
