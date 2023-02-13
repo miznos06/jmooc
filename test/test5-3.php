@@ -39,7 +39,7 @@ mysqli_close($conn);
                 //for文で地域名の分、地域名の<li>を作成してナビゲーションとする繰り返し
                     for($i=1;$i<count($areaList);$i++){
                 ?>
-                    <li><a href="test5-3.php?area=<?=$i?>"><?=[$i]?></a></li>
+                    <li><a href="test5-3.php?area=<?=$areaList[$i]?>"><?=$areaList[$i]?></a></li>
                 <?php
                 }
                 ?>
