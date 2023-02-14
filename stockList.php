@@ -1,11 +1,11 @@
 <?php
 session_start();
 if(isset($_SESSION["user"])){
-    //ユーザ情報がある
+    //ユーザ情報があるときはloginCheckで格納したSG変数$_SESSIONを変数$userに格納
     $user = $_SESSION["user"];
 }
 else {
-    //ユーザ情報がない
+    //ユーザ情報がないときはセッションを切ってログイン画面に遷移
     session_destroy();
     $host = $_SERVER['HTTP_HOST'];
     $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\' );
@@ -70,6 +70,7 @@ else {
                 <img src="images/logo.gif">
                 <div id="header_title">在庫管理システム</div>
                     <form action="logout.php" method="post">
+                        <!-- SG変数$_SESSION＞変数$user＞からuser名を受け取って表示 -->
                         <div id="header_user" ><?= $user["user_name"] ?> 様
                         <input type ="submit" value="ログアウト"></div>
                     </form>

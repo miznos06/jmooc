@@ -28,6 +28,8 @@ $host = $_SERVER['HTTP_HOST'];
 $uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
 if($flag){
     //ログインに成功した場合、在庫一覧画面に遷移
+    //$userにユーザIDとユーザ名で作った連想配列を格納。SG変数$_SESIONに格納
+    //ログイン成功時に0をSG変数$_SESIONに格納
     $user = array("user_id" => $row["user_id"], "user_name" => $row["user_name"]);
     $_SESSION["user"] = $user;
     $_SESSION["type"] = 0;
