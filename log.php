@@ -14,7 +14,9 @@
     $now_str = date("Y-m-d H:i:s");
     
     foreach($_POST as $key => $value){
+        //$key(=材料と紐づく)がin,out,空欄でないときにデータベースに入れる
         if($key != "in" && $key != "out" && $value != ""){
+        //入出庫どちらにも対応するため↑in,outで+-の異なる$unitと個数を*
         $n = $value * $unit;
         $sql = "INSERT INTO stockLog (stock_id, user_id, in_out_n, update_date) ";
         $sql .= " VALUES($key, $user_id, $n, '$now_str' )";

@@ -12,6 +12,7 @@
     $sql .= " VALUES ('$user_number' , '$user_name' , '$user_password' , 1)";
 
     if($result = mysqli_query($conn , $sql) ){
+      //SQLの結果を配列にして変数＞SG変数に格納して在庫一覧画面へ
       $user = array("user_id" => mysqli_insert_id($conn) , "user_name" => $user_name);
       $_SESSION["user"] = $user;
       $_SESSION["type"] = 0;
