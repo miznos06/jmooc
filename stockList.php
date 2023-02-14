@@ -16,6 +16,7 @@ else {
 
     include "dbConnect.php";
 
+    //種類の選択があるときは変数に格納してセッションに渡す。無い時（ログイン時）は変数に格納するだけ
     if(isset($_POST['type_select'])){
         $type=$_POST["type_select"];
         $_SESSION["type"] = $type;
@@ -24,6 +25,7 @@ else {
         $type = $_SESSION["type"];
     }
 
+    //種類の選択があるとき（0以上のとき）はSQL文にwhereを追加。無い時（ログイン時）はwhereを無しに。
     if($type >0){
         $where = " WHERE type=$type";
     }
@@ -100,6 +102,7 @@ else {
                 ?>
                 <form action="stockList.php" method="post">
                     種類の選択：<select name="type_select">
+                        //選択時にフォーム選択リスト（selectedで決まる）も変更する。typeの値でif文。
                         <?php
                             if($type == 0){
                         ?>
