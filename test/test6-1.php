@@ -1,7 +1,7 @@
 <?php
 include "dbConnect.php";
 
-$sql = "SELECT*FROM cuontry";
+$sql = "SELECT*FROM country";
 if($result = mysqli_query($conn, $sql)){
 
 }

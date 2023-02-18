@@ -16,7 +16,7 @@ if(count($data)<3)
 }
 else{
     $extra="test6-2add.php";
-    haeder("Location:http://$host$uri/$extra");
+    header("Location:http://$host$uri/$extra");
     exit();
 }
 
